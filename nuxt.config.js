@@ -1,4 +1,5 @@
 import colors from 'vuetify/es5/util/colors'
+import { defineNuxtConfig } from 'nuxt'
 
 export default {
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
@@ -31,7 +32,11 @@ export default {
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
-  components: true,
+  components: [
+    { path: '~/components/to_do', extensions: ['vue'] },
+    { path: '~/components/shared', extensions: ['vue'] },
+    { path: '~/components/to_do/dialogues', extensions: ['vue'] }
+],
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
@@ -43,6 +48,8 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
+    'nuxt-material-design-icons-iconfont',
+    'nuxt-icon'
   ],
 
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
